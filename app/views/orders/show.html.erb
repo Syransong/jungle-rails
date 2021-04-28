@@ -8,6 +8,18 @@
     <h4>Thank you for your order!</h4>
   </div>
 
+  <p> <%= @order.inspect %> </p>
+  <p> Account Email: <%= @order[:email] %> </p>
+  <p> Total Amount: <%= humanized_money_with_symbol @order[:total_cents] / 100.00 %> </p>
+
+  <li>line items: <%= @order.line_items.inspect %></li>
+
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
 </section>
+
+# want line items in order
+# check want image, name and description 
+# check waht their respective quantities and line item totals 
+# check want final amount for the order 
+# check email that was used 
