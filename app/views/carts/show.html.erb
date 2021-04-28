@@ -5,8 +5,8 @@
   </header>
 
   <% if cart.empty? %>
-    <p> Your cart is empty. Maybe you should buy something? </p>
-    <%= link_to "Browse products", products_path %>
+    <p class="alert alert-warning" role="alert"> Your cart is empty. Maybe you should buy something? </p>
+    <%= link_to "Browse products", products_path, class:"btn btn-info" %>
 
   <% else %>
 
