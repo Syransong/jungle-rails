@@ -7,4 +7,25 @@
   <div class="well">
     <%= link_to '+ New Category', [:new, :admin, :category], class: 'btn btn-info' %>
   </div>
+
+  <div class="panel panel-default categories">
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Categories</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @categories.each do |category| %>
+        <tr>
+          <td>
+            <p> <%= category[:name] %> </p>
+          <td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
 </section>
