@@ -90,13 +90,36 @@ RSpec.describe User, type: :model do
       end
     end
   end  
+
+  describe ".authenticate_with_credentials" do
+    before do
+      @user = User.create(
+        name: "Jason Mason",
+        email: "jason@mason.com",
+        password: "stone",
+        password_confirmation: "stone"
+      )
+    end
+    
+    it "should log in user that has the correct password" do
+      authenticate = User.authenticate_with_credentials("jason@mason.com", "stone")
+      expect(authenticate).to eql(@user)
+    end
+
+    it "should still log in user if the email has whitespace" do
+      authenticate = User.authenticate_with_credentials("    jason@mason.com    ", "stone")
+      expect(authenticate).to eql(@user)
+    end
+
+    it "should still log in user if the email is in the wrong case" do
+      authenticate = User.authenticate_with_credentials("JaSoN@mAsOn.com", "stone")
+      expect(authenticate).to eql(@user)
+    end
+
+    it "should NOT log in user if the password is not in the right case" do
+      authenticate = User.authenticate_with_credentials("JaSoN@mAsOn.com", "stONe")
+      expect(authenticate).to eql(nil)
+    end
+  end
 end
 
-#2. Define validation specs
-# Make sure password and password_confirmation match 
-# Email must be unique, case_sensitiviy doesnt matter
-# first name and last name should also be required 
-
-#3. Password minimu length 
-
-#4. New authentication (class) method 
