@@ -24,6 +24,15 @@ RSpec.describe User, type: :model do
         expect(@user.password).to_not be_equal(@user.password_confirmation)
       end
 
+      it "should have a password with a minimum length of 3" do
+        @user = User.new(
+          name: "Jason Mason",
+          email: "jason@mason.com",
+          password: "ro",
+          password_confirmation: "ro"
+        )
+        expect(@user).to_not be_valid
+      end
     end
 
     context "given the following input fields: name, email, and password" do
