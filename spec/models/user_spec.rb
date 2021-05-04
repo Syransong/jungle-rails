@@ -52,7 +52,7 @@ RSpec.describe User, type: :model do
 
     context "verify inputted email:" do
       before do
-        @user1 = User.new(
+        @user1 = User.create(
           name: "Jason Mason",
           email: "jason@mason.com",
           password: "stone",
