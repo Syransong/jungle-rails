@@ -5,13 +5,16 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 ## App Preview
 
 Home Page:
-!["View of Homepage of Jungle Site"]()
+!["View of Homepage of Jungle Site"](https://github.com/Syransong/jungle-rails/blob/master/docs/Jungle-HomePage.png?raw=true)
 
-Book an Appointment:
-!["View of Category"]()
+Category-Specific View:
+!["View of Furniture Category"](https://github.com/Syransong/jungle-rails/blob/master/docs/Jungle-CategoryView.png?raw=true)
 
-Mobile View:
-!["View of the Order Confirmation Page"]()
+Product Detailed View:
+!["Detailed view of Hipster Socks"](https://github.com/Syransong/jungle-rails/blob/master/docs/Jungle-ProductDetail.png?raw=true)
+
+Order Confirmation Page:
+!["View of the Order Confirmation Page"](https://github.com/Syransong/jungle-rails/blob/master/docs/Jungle-orderConfirm.png?raw=true)
 
 ## Additional Steps for Apple M1 Machines
 
